@@ -1,5 +1,5 @@
 package no.hvl.data102.filmarkiv.impl;
-
+//test for å se om github funker
 import java.util.Objects;
 
 public class Film {
