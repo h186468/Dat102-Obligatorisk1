@@ -7,16 +7,12 @@ public class Filmarkiv implements FilmarkivADT {
     private Film[] filmer;
     private int antall;
 
-    /**
-     * 
-     * 
-     * @param 
-     */
+    
     public Filmarkiv(int kapasitet) {
         filmer = new Film[kapasitet];
         antall = 0;
     }
-
+    
     @Override
     public Film finnFilm(int nr) {
         for (int i = 0; i < antall; i++) {
@@ -93,13 +89,7 @@ public class Filmarkiv implements FilmarkivADT {
         filmer = Arrays.copyOf(filmer, filmer.length * 2);
     }
 
-    /**
-     * 
-     * 
-     * @param tabell  original tabell.
-     * @param lengde  antall elementer som skal beholdes.
-     * @return ny tabell med riktig størrelse.
-     */
+    
     private Film[] trimTabell(Film[] tabell, int lengde) {
         return Arrays.copyOf(tabell, lengde);
     }
