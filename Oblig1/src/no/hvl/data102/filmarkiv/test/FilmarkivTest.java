@@ -56,6 +56,26 @@ class FilmarkivTest {
 
 	}
     
+	@Test
+	void testSoekProdusent() {
+
+		Filmarkiv arkiv = new Filmarkiv(10);
+		Film film1 = new Film(1, "James Cameron", "Avatar", 2009, Sjanger.ACTION, "Fox");
+		Film film2 = new Film(2, "Steven Spielberg", "E.T.", 1982, Sjanger.DRAMA, "Universal");
+		Film film3 = new Film(3, "Steven Spielberg", "Jurassic Park", 1993, Sjanger.ACTION, "Universal");
+
+		arkiv.leggTilFilm(film1);
+		arkiv.leggTilFilm(film2);
+		arkiv.leggTilFilm(film3);
+
+		Film[] filmer = arkiv.soekProdusent("Steven Spielberg");
+		assertEquals(2, filmer.length);
+		assertEquals(film2, filmer[0]);
+		assertEquals(film3, filmer[1]);
+
+	}
+	
+    
     // osv.
     
 }
